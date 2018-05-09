@@ -1,0 +1,52 @@
+<div class="container-fluid">
+    <div class="container">
+        <div class="col-md-4 col-md-offset-4">
+            <ui-accordions>
+                <ui-accordion title="Accordion 1">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget nulla vitae velit dignissim tristique sit amet et ex. Maecenas hendrerit metus est, id viverra purus suscipit eu. Curabitur rhoncus diam id sodales fermentum. Integer scelerisque blandit lobortis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Proin maximus velit eget mollis rhoncus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                </ui-accordion>
+
+                <ui-accordion title="Accordion 2">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget nulla vitae velit dignissim tristique sit amet et ex. Maecenas hendrerit metus est, id viverra purus suscipit eu. Curabitur rhoncus diam id sodales fermentum. Integer scelerisque blandit lobortis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Proin maximus velit eget mollis rhoncus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                </ui-accordion>
+            </ui-accordions>
+        </div>
+    </div>
+
+    <div class="container">
+        <h4>{{app}}</h4>
+
+        <ui-alert title="Ops, aconteceu um problema!">
+            Não foi possivel carregar os dados!
+        </ui-alert>
+
+        <input ng-model="criterioDeBusca" class="form-control" type="text" placeholder="O que você está buscando?">
+
+        <table ng-show="contatos.length > 0" class="table">
+            <tr>
+                <th></th>
+                <th>Serial</th>
+                <th><a ng-click="ordenarPor('nome')" href="#">Nome</a></th>
+                <th><a ng-click="ordenarPor('telefone')" href="#">Telefone</a></th>
+                <th>Operadora</th>
+                <th>Data</th>
+                <!--<th></th>-->
+            </tr>
+            <tr ng-class="{'selecionado negrito': contato.selecionado}" ng-repeat="contato in contatos | filter:{nome: criterioDeBusca} | orderBy: criterioDeOrdenacao:direcaoDeOrdenacao">
+                <th><input ng-model="contato.selecionado" type="checkbox"></th>
+                <td>{{contato.serial}}</td>
+                <td>{{contato.nome | name | ellipsis:10}}</td>
+                <td>{{contato.telefone}}</td>
+                <td>{{contato.operadora.nome | lowercase}}</td>
+                <td>{{contato.data | date:'dd/MM/yyyy'}}</td>
+                <!--<td><div ng-style="{'background': contato.cor}" style="width: 20px; height: 20px;"></div></td>
+                <td ng-repeat="(key,value) in contato">{{value}}</td>-->
+            </tr>
+        </table>
+
+        <hr>
+
+        <a class="btn btn-primary btn-block" href="#/formulario">Novo Contato</a>
+        <button ng-click="apagarContatos(contatos)" ng-if="isContatoSelecionado(contatos)" class="btn btn-danger btn-block" type="button">Apagar Contatos</button>
+    </div>
+</div>

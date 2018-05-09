@@ -1,0 +1,42 @@
+.selecionado {
+    background: red;
+}
+.negrito {
+    font-weight: bold;
+    color: #FFF;
+}
+.ui-alert {
+    background-color: #F2DEDE;
+    padding: 20px;
+    border-radius: 5px;
+    margin: 20px auto;
+    text-align: center;
+}
+.ui-alert-title {
+    color: #AF4341;
+    font-weight: bold;
+    font-size: 24px;
+}
+.ui-alert-message {
+    color: #AF4341;
+    font-size: 16px;
+}
+.ui-accordion-title {
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    box-shadow: 0 2px 0 0 rgba(49,49,64,.07);
+    background-color: #EDEAEA;
+    box-sizing: border-box;
+    padding: 10px;
+    margin-top: 7px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.ui-accordion-content {
+    border: 1px solid #ddd;
+    background-color: #FFF;
+    box-sizing: border-box;
+    padding: 10px;
+    margin-top: -1px;
+}
