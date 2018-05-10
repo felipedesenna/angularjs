@@ -1,5 +1,5 @@
-angular.module("serialGeneretor", []);
-angular.module("serialGeneretor").provider("serialGeneretor", function (){
+angular.module("serialGenerator", []);
+angular.module("serialGenerator").provider("serialGenerator", function (){
     var _length = 10;
 
     this.getLength = function (){

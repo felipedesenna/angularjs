@@ -1,4 +1,5 @@
-angular.module("listaTelefonica").directive("uiAlert", function (){
+angular.module("directiveUiAlert", []);
+angular.module("directiveUiAlert").directive("uiAlert", function (){
     return {
         templateUrl: "view/alert.html",
         replace: true,

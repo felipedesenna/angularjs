@@ -1,4 +1,4 @@
-angular.module("listaTelefonica", ["ngMessages", "serialGenerator", "ui", "ngRoute"]);
+angular.module("listaTelefonica", ["ngMessages", "ngRoute", "serialGenerator", "ui", "directiveUiAlert", "directiveUiDate", "nameFilter", "ellipsisFilter"]);
 angular.module("listaTelefonica").controller("listaTelefonicaCtrl", function ($scope, contatosAPI, operadorasAPI, serialGenerator) {
 	$scope.app = "Lista Telefonica";
 	$scope.contatos = [];
