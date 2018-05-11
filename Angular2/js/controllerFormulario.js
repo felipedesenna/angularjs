@@ -1,8 +1,8 @@
-angular.module("listaTelefonica").controller("controllerFormulario", function($scope, $location, contatosAPI, serialGeneretor, operadoras){
+angular.module("listaTelefonica").controller("controllerFormulario", function($scope, $location, contatosAPI, serialGenerator, operadoras){
     $scope.operadoras = operadoras.data;
 
     $scope.adicionarContato = function(contato){
-        contato.serial = serialGeneretor.generate();
+        contato.serial = serialGenerator.generate();
         contatosAPI.saveContatos(contato).success(function (data){
             delete $scope.contato;
             $scope.contatoForm.$setPristine();

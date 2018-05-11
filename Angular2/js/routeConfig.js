@@ -20,5 +20,14 @@ angular.module("listaTelefonica").config(function ($routeProvider) {
             }
         }
     });
+    $routeProvider.when("/detalhesContato/:id", {
+        templateUrl: "view/detalhesContato.html",
+        controller: "detalhesCtrl",
+        resolve: {
+            contato: function (contatosAPI, $route) {
+                return contatosAPI.getContato($route.current.params.id);
+            }
+        }
+    });
     $routeProvider.otherwise({redirecTo: "/contatos"});
 });
