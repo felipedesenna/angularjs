@@ -1,12 +1,5 @@
-angular.module("listaTelefonica").controller("controllerFormulario", function($scope, $location, contatosAPI, serialGenerator, operadoras){
-    $scope.operadoras = operadoras.data;
-
-    $scope.adicionarContato = function(contato){
-        contato.serial = serialGenerator.generate();
-        contatosAPI.saveContatos(contato).success(function (data){
-            delete $scope.contato;
-            $scope.contatoForm.$setPristine();
-            $location.path("/contatos");
-        });
-    };
+angular.module("listaTelefonica").controller("listaTelefonicaCtrl", function($scope, $http) {
+    $http.get("api/conexao.php").then(function (response) {
+        $scope.names = response.data.records;
+    });
 });
