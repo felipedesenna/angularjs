@@ -8,7 +8,7 @@
 
         <input ng-model="criterioDeBusca" class="form-control" type="text" placeholder="O que você está buscando?">
 
-        <table ng-show="contatos.length > 0" class="table">
+        <table ng-show="names.length > 0" class="table">
             <tr>
                 <th></th>
                 <th>Serial</th>
@@ -16,17 +16,14 @@
                 <th><a ng-click="ordenarPor('telefone')" href="#">Telefone</a></th>
                 <th>Operadora</th>
                 <th>Data</th>
-                <!--<th></th>-->
             </tr>
-            <tr ng-class="{'selecionado negrito': contato.selecionado}" ng-repeat="contato in contatos | filter:{nome: criterioDeBusca} | orderBy: criterioDeOrdenacao:direcaoDeOrdenacao">
+            <tr ng-class="{'selecionado negrito': contato.selecionado}" ng-repeat="x in names | filter:{Nome: criterioDeBusca} | orderBy: criterioDeOrdenacao:direcaoDeOrdenacao">
                 <th><input ng-model="contato.selecionado" type="checkbox"></th>
-                <td>{{contato.serial}}</td>
-                <td><a href="{{contato.id}}">{{contato.nome | name}}</a></td>
-                <td>{{contato.telefone}}</td>
-                <td>{{contato.operadora.nome | lowercase}}</td>
-                <td>{{contato.data | date:'dd/MM/yyyy'}}</td>
-                <!--<td><div ng-style="{'background': contato.cor}" style="width: 20px; height: 20px;"></div></td>
-                <td ng-repeat="(key,value) in contato">{{value}}</td>-->
+                <td>{{x.serial}}</td>
+                <td><a href="#/detalhesContato/{{contato.id}}">{{x.Nome | name}}</a></td>
+                <td>{{x.Telefone}}</td>
+                <td>{{x.Operadora | lowercase}}</td>
+                <td>{{x.Data | date:'dd/MM/yyyy'}}</td>
             </tr>
         </table>
 
