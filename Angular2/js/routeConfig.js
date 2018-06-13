@@ -1,15 +1,7 @@
 angular.module("listaTelefonica").config(function ($routeProvider) {
     $routeProvider.when("/contatos", {
         templateUrl: "view/contatos.html",
-        controller: "listaTelefonicaCtrl",
-        resolve: {
-            contatos: function (contatosAPI) {
-                return contatosAPI.getContatos();
-            },
-            operadoras: function (operadorasAPI) {
-                return operadorasAPI.getOperadoras();
-            }
-        }
+        controller: "listaTelefonicaCtrl"
     });
     $routeProvider.when("/formulario", {
         templateUrl: "view/formulario.html",
@@ -29,5 +21,5 @@ angular.module("listaTelefonica").config(function ($routeProvider) {
             }
         }
     });
-    $routeProvider.otherwise({redirecTo: "/contatos"});
+    $routeProvider.otherwise({redirectTo: "/contatos"});
 });
