@@ -1,16 +1,11 @@
 angular.module("listaTelefonica").config(function ($routeProvider) {
     $routeProvider.when("/contatos", {
         templateUrl: "view/contatos.html",
-        controller: "listaTelefonicaCtrl"
+        controller: "controllerFormulario"
     });
     $routeProvider.when("/formulario", {
         templateUrl: "view/formulario.html",
-        controller: "controllerFormulario",
-        resolve: {
-            operadoras: function (operadorasAPI) {
-                return operadorasAPI.getOperadoras();
-            }
-        }
+        controller: "controllerFormulario"
     });
     $routeProvider.when("/detalhesContato/:id", {
         templateUrl: "view/detalhesContato.html",
