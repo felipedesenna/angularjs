@@ -1,0 +1,15 @@
+<div class="container-fluid">
+    <div class="container">
+        <form name="contatoForm" ng-submit="insertInfo(x);">
+          <input ng-model="x.nome" ng-required="true" ng-minlength="10" class="form-control" type="text" name="nome" placeholder="Nome">
+          <input ng-model="x.telefone" ng-required="true" ng-pattern="/^\d{4,5}-\d{4}$/" class="form-control" type="text" name="telefone" placeholder="Telefone">
+          <input ng-model="x.data" class="form-control" type="text" name="data" placeholder="Data">
+          <input ng-model="x.operadora" class="form-control" type="text" name="operadora" placeholder="Operadora">
+          <!--<select ng-model="x.operadora" ng-options="operadora.nome + ' ('+ (operadora.preco | currency) +')' group by operadora.categoria for operadora in operadoras | orderBy: 'nome'" class="form-control">
+            <option value="">Selecione uma operadora</option>
+        </select>-->
+
+            <button class="btn btn-primary btn-block">Adicionar Contato</button>
+        </form>
+    </div>
+</div>

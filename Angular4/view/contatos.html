@@ -1,0 +1,33 @@
+<div class="container-fluid">
+    <div class="container">
+        <h4>{{app}}</h4>
+
+        <input ng-model="criterioDeBusca" class="form-control" type="text" placeholder="O que você está buscando?">
+
+        <table ng-show="names.length > 0" class="table">
+            <tr>
+                <th></th>
+                <th>Serial</th>
+                <th>Nome</th>
+                <th>Telefone</th>
+                <th>Operadora</th>
+                <th>Data</th>
+                <th></th>
+            </tr>
+            <tr ng-class="{'selecionado negrito': contato.selecionado}" ng-repeat="x in names | filter:{nome: criterioDeBusca}">
+                <th><input ng-model="contato.selecionado" type="checkbox"></th>
+                <td>{{x.idcontatos}}</td>
+                <td><a href="#/detalhesContato/{{x.idcontatos}}">{{x.nome | name}}</a></td>
+                <td>{{x.telefone}}</td>
+                <td>{{x.operadora | lowercase}}</td>
+                <td>{{x.data | date:'dd/MM/yyyy'}}</td>
+                <td><a ng-click="deleteInfo(x)"><em class="material-icons">delete</em></a></td>
+            </tr>
+        </table>
+
+        <hr>
+
+        <a class="btn btn-primary btn-block" href="#/formulario">Novo Contato</a>
+        <button ng-click="apagarContatos(contatos)" ng-if="isContatoSelecionado(contatos)" class="btn btn-danger btn-block" type="button">Apagar Contatos</button>
+    </div>
+</div>
